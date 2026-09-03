@@ -54,6 +54,10 @@ The complete API Endpoint Plan is available in the `Docs` folder.
 
 ## Repository Structure
 
+https://youtu.be/GmoeOrAMgrQ
+
+<img width="1166" height="236" alt="image" src="https://github.com/user-attachments/assets/bc219776-901f-4ac4-988e-fbfe3059c96e" />
+
 ```text
 RaceDay/
 │
@@ -68,5 +72,5 @@ RaceDay/
 │
 └── README.md
 
-<img width="1166" height="236" alt="image" src="https://github.com/user-attachments/assets/bc219776-901f-4ac4-988e-fbfe3059c96e" />
+
 
