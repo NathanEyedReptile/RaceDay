@@ -73,6 +73,7 @@ CREATE TABLE ENROLMENT
     enr_id INT IDENTITY(1,1) PRIMARY KEY,
     participant INT NOT NULL,
     event_id INT NOT NULL,
+    category_id INT NULL,
     enr_date DATE NOT NULL DEFAULT GETDATE(),
     status VARCHAR(30) NOT NULL DEFAULT 'Pending',
 
@@ -105,6 +106,12 @@ CREATE TABLE CATEGORY
         FOREIGN KEY (event_id)
         REFERENCES EVENT(event_id)
 );
+GO
+
+ALTER TABLE ENROLMENT
+ADD CONSTRAINT FK_ENROLMENT_CATEGORY
+FOREIGN KEY (category_id)
+REFERENCES CATEGORY(category_id);
 GO
 
 
@@ -238,14 +245,14 @@ GO
 -- ============================================
 
 INSERT INTO ENROLMENT
-    (participant, event_id, enr_date, status)
+    (participant, event_id, category_id, enr_date, status)
 VALUES
-    (3, 1, '2026-09-01', 'Confirmed'),
-    (4, 1, '2026-09-02', 'Confirmed'),
-    (3, 2, '2026-09-03', 'Confirmed'),
-    (4, 2, '2026-09-03', 'Pending'),
-    (3, 3, '2026-09-04', 'Confirmed'),
-    (4, 3, '2026-09-04', 'Pending');
+    (3, 1, 1, '2026-09-01', 'Confirmed'),
+    (4, 1, 2, '2026-09-02', 'Confirmed'),
+    (3, 2, 3, '2026-09-03', 'Confirmed'),
+    (4, 2, 4, '2026-09-03', 'Pending'),
+    (3, 3, 5, '2026-09-04', 'Confirmed'),
+    (4, 3, 6, '2026-09-04', 'Pending');
 GO
 
 
