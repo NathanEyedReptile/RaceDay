@@ -1,0 +1,35 @@
+name: RaceDay CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check required files
+        run: |
+          test -f README.md
+          test -f Docs/ERD.png
+          test -f Docs/RaceDay.sql
+          test -f Docs/API_Endpoint_Plan.pdf
+
+      - name: Validate repository structure
+        run: |
+          echo "RaceDay repository structure validated successfully."
+          echo "ERD found."
+          echo "SQL script found."
+          echo "API Endpoint Plan found."
+          echo "README found."
+
+      - name: CI validation complete
+        run: echo "RaceDay CI workflow completed successfully."
