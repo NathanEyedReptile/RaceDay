@@ -54,7 +54,10 @@ The complete API Endpoint Plan is available in the `Docs` folder.
 
 ## Repository Structure
 
-https://youtu.be/GmoeOrAMgrQ
+Part 1 Video -->https://youtu.be/GmoeOrAMgrQ
+
+
+Part 2 video --> https://youtu.be/qdHEZkgUlDk
 
 <img width="1166" height="236" alt="image" src="https://github.com/user-attachments/assets/bc219776-901f-4ac4-988e-fbfe3059c96e" />
 
