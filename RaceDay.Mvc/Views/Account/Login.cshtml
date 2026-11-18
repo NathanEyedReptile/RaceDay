@@ -1,0 +1,51 @@
+@model RaceDay.Mvc.Models.Auth.LoginRequest
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<section class="account-section">
+    <div class="account-card">
+        <div class="account-heading">
+            <a asp-controller="Home" asp-action="Index" class="raceday-brand">
+                RACE<span>DAY</span><small>.</small>
+            </a>
+
+            <span class="section-kicker d-block mt-4">WELCOME BACK</span>
+            <h1>READY TO <span>RACE?</span></h1>
+            <p>Sign in to access your RaceDay account.</p>
+        </div>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger">
+                @ViewBag.Error
+            </div>
+        }
+
+        <form asp-controller="Account" asp-action="Login" method="post">
+            @Html.AntiForgeryToken()
+
+            <div class="mb-4">
+                <label asp-for="Email" class="form-label">EMAIL ADDRESS</label>
+                <input asp-for="Email" class="form-control raceday-input"
+                       type="email" placeholder="you@example.com" required />
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="Password" class="form-label">PASSWORD</label>
+                <input asp-for="Password" class="form-control raceday-input"
+                       type="password" placeholder="Enter your password" required />
+            </div>
+
+            <button type="submit" class="btn btn-raceday w-100">
+                LOG IN →
+            </button>
+        </form>
+
+        <div class="account-bottom">
+            <p>Don't have an account yet?</p>
+            <a href="#">Registration coming soon</a>
+        </div>
+    </div>
+</section>

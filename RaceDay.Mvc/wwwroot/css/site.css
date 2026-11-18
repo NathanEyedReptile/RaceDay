@@ -1,0 +1,390 @@
+:root {
+    --rd-bg: #101114;
+    --rd-panel: #191b20;
+    --rd-orange: #ff5b24;
+    --rd-white: #f5f5f5;
+    --rd-muted: #999da5;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--rd-bg);
+    color: var(--rd-white);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.raceday-navbar {
+    background: #101114;
+    border-bottom: 1px solid #292b30;
+    padding: 18px 0;
+}
+
+.raceday-brand {
+    color: white !important;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+}
+
+.raceday-brand span {
+    color: var(--rd-orange);
+}
+
+.raceday-brand small {
+    color: var(--rd-orange);
+}
+
+.navbar-nav .nav-link {
+    color: #c5c5c5;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 13px;
+    transition: color .2s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--rd-orange);
+}
+
+.navbar-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-raceday {
+    background: var(--rd-orange);
+    border: 1px solid var(--rd-orange);
+    color: white;
+    font-weight: 800;
+    padding: 11px 23px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.btn-raceday:hover {
+    background: #e94712;
+    border-color: #e94712;
+    color: white;
+}
+
+.btn-outline-light {
+    font-weight: 700;
+    padding: 11px 20px;
+    text-transform: uppercase;
+}
+
+.min-vh-hero {
+    min-height: 580px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.hero-tag,
+.section-kicker {
+    color: var(--rd-orange);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.live-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--rd-orange);
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.hero-section h1 {
+    font-size: clamp(55px, 8vw, 100px);
+    font-weight: 1000;
+    line-height: .95;
+    letter-spacing: -5px;
+    margin-top: 25px;
+}
+
+.hero-section h1 span,
+.section-heading h2 span,
+.about-section h2 span {
+    color: var(--rd-orange);
+}
+
+.hero-description {
+    color: var(--rd-muted);
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 490px;
+    margin-top: 25px;
+}
+
+.hero-visual {
+    height: 420px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-circle {
+    width: 310px;
+    height: 310px;
+    border: 2px solid var(--rd-orange);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 100px rgba(255, 91, 36, .13);
+    transform: rotate(-15deg);
+}
+
+.hero-circle span {
+    font-size: 230px;
+    font-weight: 1000;
+    color: var(--rd-orange);
+    line-height: 1;
+}
+
+.hero-number {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 55px;
+    font-weight: 900;
+    color: #292b30;
+}
+
+.hero-vertical-text {
+    position: absolute;
+    right: 0;
+    top: 45%;
+    writing-mode: vertical-rl;
+    color: #737780;
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.hero-bottom-label {
+    position: absolute;
+    bottom: 15px;
+    color: var(--rd-orange);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+.stats-strip {
+    background: var(--rd-panel);
+    border-top: 1px solid #292b30;
+    border-bottom: 1px solid #292b30;
+    padding: 35px 0;
+}
+
+.stat-item h3 {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--rd-orange);
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    color: var(--rd-muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.upcoming-section,
+.about-section {
+    padding: 100px 0;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 45px;
+}
+
+.section-heading h2,
+.about-section h2 {
+    font-size: clamp(36px, 5vw, 55px);
+    font-weight: 1000;
+    letter-spacing: -2px;
+    margin-top: 12px;
+}
+
+.section-index {
+    color: #737780;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.empty-events {
+    background: var(--rd-panel);
+    border: 1px solid #292b30;
+    padding: 65px 20px;
+    text-align: center;
+}
+
+.empty-events-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.empty-events h3 {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.empty-events p {
+    color: var(--rd-muted);
+    margin: 0;
+}
+
+.about-section {
+    background: var(--rd-panel);
+}
+
+.about-section p {
+    color: var(--rd-muted);
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.raceday-footer {
+    border-top: 1px solid #292b30;
+    padding: 35px 0;
+}
+
+.raceday-footer p {
+    color: var(--rd-muted);
+    font-size: 12px;
+}
+
+@media (max-width: 991px) {
+    .navbar-actions {
+        padding: 15px 0;
+    }
+
+    .navbar-nav .nav-link {
+        margin: 5px 0;
+    }
+
+    .hero-section h1 {
+        letter-spacing: -3px;
+    }
+}
+
+@media (max-width: 576px) {
+    .min-vh-hero {
+        min-height: 500px;
+    }
+
+    .hero-section h1 {
+        font-size: 58px;
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .upcoming-section,
+    .about-section {
+        padding: 65px 0;
+    }
+
+    .stat-item p {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+}
+
+/* Account Pages */
+
+.account-section {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.account-card {
+    background: var(--rd-panel);
+    border: 1px solid #292b30;
+    width: 100%;
+    max-width: 460px;
+    padding: 45px;
+}
+
+.account-heading {
+    margin-bottom: 35px;
+}
+
+.account-heading h1 {
+    font-size: 38px;
+    font-weight: 1000;
+    margin-top: 15px;
+}
+
+.account-heading h1 span {
+    color: var(--rd-orange);
+}
+
+.account-heading p,
+.account-bottom p {
+    color: var(--rd-muted);
+}
+
+.account-card .form-label {
+    color: #c5c5c5;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.raceday-input {
+    background: #101114;
+    border: 1px solid #363940;
+    border-radius: 0;
+    color: white;
+    padding: 13px;
+}
+
+.raceday-input:focus {
+    background: #101114;
+    border-color: var(--rd-orange);
+    color: white;
+    box-shadow: 0 0 0 2px rgba(255, 91, 36, .15);
+}
+
+.raceday-input::placeholder {
+    color: #666;
+}
+
+.account-bottom {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.account-bottom p {
+    margin-bottom: 5px;
+}
+
+.account-bottom a {
+    color: var(--rd-orange);
+    font-weight: 700;
+}

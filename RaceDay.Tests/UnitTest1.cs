@@ -145,7 +145,7 @@ public class UnitTest1
             Description = "A test event",
             EventDate = DateTime.UtcNow.AddDays(7),
             Location = "Durban",
-            Distance = 5.0,
+            Distance = 5.0m,
             EventType = "Running",
             BannerImage = ""
         });
@@ -243,6 +243,7 @@ Assert.True(
             HttpStatusCode.Created,
             eventResponse.StatusCode);
     }
+
 
 
 }

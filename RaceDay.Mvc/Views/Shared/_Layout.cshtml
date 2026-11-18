@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] | RaceDay</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RaceDay.Mvc.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg raceday-navbar">
+            <div class="container">
+                <a class="navbar-brand raceday-brand" asp-controller="Home" asp-action="Index">
+                    RACE<span>DAY</span><small>.</small>
+                </a>
+
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                        aria-controls="mainNavbar" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
+                        @if (Context.Session.GetString("UserRole") == "Participant")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Events" asp-action="Index">Upcoming Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Enrolments" asp-action="MyEvents">My Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Results" asp-action="MyResults">My Results</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Profile" asp-action="Index">My Profile</a>
+                            </li>
+                        }
+                        else if (Context.Session.GetString("UserRole") == "Organiser"
+                              || Context.Session.GetString("UserRole") == "Admin")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                            </li>
+                           <li class="nav-item">
+                               <a class="nav-link" asp-controller="Events" asp-action="Manage">Manage Events</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" asp-controller="Enrolments" asp-action="Index">Enrolments</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" asp-controller="Results" asp-action="Index">Results</a>
+                           </li>
+                       }
+                       else
+                       {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#upcoming">Upcoming Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#about">About</a>
+                            </li>
+                        }
+                    </ul>
+
+                    <div class="navbar-actions">
+                        @if (Context.Session.GetString("AuthToken") == null)
+                        {
+                            <a asp-controller="Account" asp-action="Login"
+                               class="btn btn-outline-light btn-sm">Log In</a>
+
+                            <a href="#" class="btn btn-raceday btn-sm">Get Started</a>
+                        }
+                        else
+                        {
+                            <span class="text-light me-3">
+                                Hi, @Context.Session.GetString("FirstName")
+                            </span>
+
+                            <form asp-controller="Account" asp-action="Logout" method="post">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-outline-light btn-sm">
+                                    Log Out
+                                </button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="raceday-footer">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <a class="raceday-brand" asp-controller="Home" asp-action="Index">
+                RACE<span>DAY</span><small>.</small>
+            </a>
+            <p class="mb-0">Every race has a story. Make yours count.</p>
+            <p class="mb-0">&copy; 2026 RaceDay</p>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
